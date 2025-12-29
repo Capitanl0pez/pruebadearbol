@@ -3,26 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Árbol de Amor Animado</title>
 
-    <!-- Estilos -->
+    <!-- Autoría y derechos -->
+    <meta name="author" content="Zero">
+    <meta name="copyright" content="Zero - Código libre no comercial">
+    <meta name="description" content="Árbol de Amor Animado: una sorpresa interactiva y romántica para dedicar a tu pareja o ser querido. Código libre para uso personal, educativo o de inspiración.">
+    <meta name="keywords" content="amor, sorpresa, romántico, dedicatoria, animación, árbol, corazones, pareja, aniversario, regalo digital">
+    <meta name="robots" content="index, follow">
+
+    <!-- Estilos (archivos en la raíz del repo) -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.mobile.css" media="only screen and (max-width: 600px)">
 
+    <!-- Estilos internos necesarios -->
     <style>
-      .tree-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 400px;
-        height: 400px;
-        z-index: 2;
-      }
+        .tree-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            z-index: 2;
+        }
+
+        .animated-heart {
+            transform-origin: center;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            20% { transform: scale(1.1); }
+            40% { transform: scale(0.95); }
+            60% { transform: scale(1.08); }
+            80% { transform: scale(1); }
+        }
     </style>
 </head>
 
 <body>
+
     <div id="floating-objects"></div>
 
     <div class="dedication-text" id="dedication-text">
@@ -33,10 +56,11 @@
 
     <div class="tree-container" id="tree-container"></div>
 
-    <!-- Audio -->
-    <audio src="Love.mp3" id="bg-music" preload="auto"></audio>
+    <!-- Audio (archivo en la raíz) -->
+    <audio id="bg-music" src="Love.mp3" preload="auto"></audio>
 
-    <!-- JavaScript -->
+    <!-- JavaScript (archivo en la raíz) -->
     <script src="script.js"></script>
+
 </body>
 </html>
